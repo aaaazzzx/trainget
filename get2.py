@@ -33,7 +33,10 @@ for t in trainData:
     cc.append(aaa)
     try :
         r2 = requests.get('http://shike.gaotie.cn/checi.asp?checi=%s'%(aaa))
-        f = open("%s.html"%(aaa), "w+b")
+        # print(r2.text)
+        f = open("%s.html"%(aaa), "w")
+        f.write(r2.text)
+        print('sucess')
     except IOError:
         print ('Error')
     # f = open("test.htm","w+b")
